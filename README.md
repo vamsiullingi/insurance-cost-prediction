@@ -1,44 +1,82 @@
-# 🏥 Health Insurance Premium Prediction
-> **A Machine Learning & Business Intelligence Project**
+# 🏥 SmartHealth: AI-Driven Insurance Premium Prediction
+> **Bridging the gap between Health Data and Actuarial Precision.**
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/ML-Random%20Forest-green)
 
 ---
 
-### 📌 Project Overview
-This project predicts individual health insurance premiums based on physical and clinical factors. By analyzing data from 986 policyholders, I built a predictive engine that automates pricing and identifies key cost drivers for the insurance provider.
-
-### 📊 Key Visualizations (Tableau)
-* **Avg Premium:** ₹24,337
-* **Primary Drivers:** Age, BMI, and Chronic Health Conditions.
-* [View Interactive Dashboard](https://public.tableau.com/shared/SDKFH67R5?:display_count=n&:origin=viz_share_link)
+## 🔗 Live Project Ecosystem
+* **🚀 Live Calculator:** [Try the Web App](https://insurance-cost-prediction-b7jjmfgncbwxvajkwxvvd9.streamlit.app/)
+* **📊 Analytics Hub:** [Explore the Tableau Dashboard](https://public.tableau.com/views/InsuranceCostPrediction_17770378945780/HealthInsurancePricingAnalysisRiskFactors)
+* **✍️ Technical Deep-Dive:** [Read the 2,000-word Blog Post](YOUR_BLOG_LINK)
 
 ---
 
-### 🧪 Statistical Insights (Hypothesis Testing)
-We conducted rigorous testing to validate our features before modeling:
-* **Chronic Diseases:** Using a T-test, we found a $p$-value of **0.0000**, proving chronic conditions significantly impact premiums.
-* **Major Surgeries:** An ANOVA test confirmed that the number of surgeries is a critical predictor ($p < 0.05$).
+## 📖 The Problem
+Traditional insurance pricing often relies on generic averages, leading to "premium leakage" for insurers and unfair rates for healthy individuals. **SmartHealth** uses a data-driven approach to analyze 986 policyholder profiles, providing **real-time, personalized risk assessments.**
 
-### 🤖 Machine Learning Performance
-I compared three models to find the best "Pricing Engine":
+---
 
+## 🏗️ Project Architecture
+1. **Data Discovery (Tableau):** Dissecting 11 health attributes to identify hidden cost drivers.
+2. **Statistical Validation (SciPy):** Proving the significance of chronic conditions and surgical history.
+3. **Feature Engineering:** Crafting custom `BMI` and `RiskScore` metrics to enhance model "vision."
+4. **Predictive Modeling:** Training a high-precision Random Forest Regressor.
+5. **Deployment:** Launching an interactive Streamlit interface for non-technical agents.
+
+---
+
+## 📊 Phase 1: Strategic Insights (Tableau)
+Instead of static charts, I built a 4-layered interactive experience. 
+* **The "Age-Chronic" Intersection:** Visualized how premiums spike exponentially after age 45 when combined with chronic conditions.
+* **Risk Score Impact:** Found that each additional health condition increases premium costs by an average of **₹3,500**.
+
+> **Pro-Tip:** Check out the "Health Condition Prevalence" sheet in my Tableau link to see how Diabetes and BP overlap.
+
+---
+
+## 🧪 Phase 2: The Science (Hypothesis Testing)
+We validated our features to ensure the model focuses on what matters:
+* **Chronic Disease:** A T-Test yielded a $p$-value of **0.0000**, confirming it as a mandatory predictor.
+* **Surgical History:** ANOVA testing proved that individuals with 2+ surgeries form a distinct, high-cost bracket.
+
+---
+
+## 🤖 Phase 3: Machine Learning Engine
+I achieved a high-accuracy model by moving beyond basic linear relationships.
+
+### Performance Leaderboard:
 | Model | R² Score | MAE (Error) |
 | :--- | :--- | :--- |
-| **Random Forest** | **0.8899** | **₹1,093** |
+| **🏆 Random Forest** | **0.8899** | **₹1,093** |
 | Gradient Boosting | 0.8657 | ₹1,476 |
 | Linear Regression | 0.7148 | ₹2,580 |
 
----
-
-### 🚀 Deployment
-The final model is deployed via a **Streamlit Web Application**, allowing agents to input user data and receive an instant quote.
-
-**How to run locally:**
-1. `pip install -r requirements.txt`
-2. `streamlit run app.py`
+### 🛠️ Feature Importance
+My Random Forest model identified **Age**, **History of Transplants**, and **BMI** as the top 3 influencers of premium costs.
 
 ---
 
-### 🛠️ Tech Stack
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+## 🚀 Phase 4: Production Deployment
+The final product is a **Live Web Calculator** designed for Insurance Agents.
+* **Instant Quotes:** Input customer data and get a prediction in <1 second.
+* **Dynamic Feedback:** The app calculates BMI and Risk Scores on the fly, providing data-backed health tips alongside the quote.
+
+---
+
+## 📂 Repository Contents
+* `app.py`: The Streamlit frontend script.
+* `model_training.py`: The full Python pipeline (Cleaning, Stats, Training).
+* `insurance.csv`: The core dataset.
+* `rf_model.pkl`: The serialized "brain" of our app.
+* `requirements.txt`: List of dependencies for cloud hosting.
+
+---
+
+## 👨‍💻 Installation & Local Usage
+1. Clone the repo: `git clone https://github.com/vamsiullingi/insurance-cost-prediction.git`
+2. Install requirements: `pip install -r requirements.txt`
+3. Run the app: `streamlit run app.py`
