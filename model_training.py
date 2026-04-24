@@ -20,15 +20,23 @@ health_cols = ['Diabetes', 'BloodPressureProblems', 'AnyTransplants',
                'AnyChronicDiseases', 'KnownAllergies', 'HistoryOfCancerInFamily']
 df['RiskScore'] = df[health_cols].sum(axis=1)
 
-# --- HYPOTHESIS TESTING ---
+# --- STATISTICAL ANALYSIS & VISUALIZATION ---
 print("--- Statistical Analysis ---")
-# Hypothesis: Does Chronic Disease lead to significantly higher premiums?
+
+# 1. Global Correlation Matrix (The "Global Map")
+plt.figure(figsize=(12, 10))
+correlation_matrix = df.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+plt.title('Correlation Matrix of Insurance Risk Factors')
+plt.show()
+
+# 2. Hypothesis Testing: Does Chronic Disease lead to significantly higher premiums?
 chronic_yes = df[df['AnyChronicDiseases'] == 1]['PremiumPrice']
 chronic_no = df[df['AnyChronicDiseases'] == 0]['PremiumPrice']
 t_stat, p_val = stats.ttest_ind(chronic_yes, chronic_no)
 print(f"Chronic Disease T-test p-value: {p_val:.4f}")
 
-# Hypothesis: Does the number of surgeries impact cost? (ANOVA)
+# 3. Hypothesis Testing: Does the number of surgeries impact cost? (ANOVA)
 surgery_groups = [group['PremiumPrice'].values for name, group in df.groupby('NumberOfMajorSurgeries')]
 f_stat, p_anova = stats.f_oneway(*surgery_groups)
 print(f"Surgeries ANOVA p-value: {p_anova:.4f}\n")
