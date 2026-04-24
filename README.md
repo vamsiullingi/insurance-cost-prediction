@@ -11,7 +11,7 @@
 ## 🔗 Live Project Ecosystem
 * **🚀 Live Calculator:** [Try the Web App](https://insurance-cost-prediction-b7jjmfgncbwxvajkwxvvd9.streamlit.app/)
 * **📊 Analytics Hub:** [Explore the Tableau Dashboard](https://public.tableau.com/views/InsuranceCostPrediction_17770378945780/HealthInsurancePricingAnalysisRiskFactors)
-* **✍️ Technical Deep-Dive:** [Read the 2,000-word Blog Post](YOUR_BLOG_LINK)
+* **✍️ Technical Deep-Dive:** [Detailed Medium Blog](https://medium.com/@vamsiullingi1729/predicting-the-unpredictable-how-i-built-an-ai-driven-insurance-pricing-engine-with-89-accuracy-76bc26a05641)
 
 ---
 
